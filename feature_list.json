@@ -1,0 +1,200 @@
+{
+  "project_name": "ImageAgentBuilder",
+  "description": "B/S架构应用，帮助智能体构建师创建面向特定目标的图像生成智能体",
+  "tech_stack": {
+    "frontend": "React",
+    "backend": "Supabase",
+    "agent_framework": "Claude Agent SDK (via Claude Code)",
+    "image_model": "Google Nano Banana 2"
+  },
+  "features": [
+    {
+      "id": "F001",
+      "category": "project_management",
+      "description": "用户可以创建和管理多个智能体构建项目",
+      "priority": "high",
+      "steps": [
+        "创建项目列表页面",
+        "实现项目创建表单",
+        "实现项目编辑功能",
+        "实现项目删除功能",
+        "在 Supabase 中创建 projects 表"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F002",
+      "category": "agent_initialization",
+      "description": "用户可以初始化一个目标智能体，设置基本信息和初始提示词",
+      "priority": "high",
+      "steps": [
+        "设计智能体初始化向导",
+        "创建智能体基本信息表单（名称、描述、目标）",
+        "实现初始提示词编辑器",
+        "在 Supabase 中创建 agents 表",
+        "保存智能体配置到数据库"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F003",
+      "category": "sample_management",
+      "description": "用户可以上传样例图像和输入描述，作为智能体优化的参考",
+      "priority": "high",
+      "steps": [
+        "实现图像上传组件",
+        "支持多图像上传",
+        "实现图像预览功能",
+        "创建样例描述输入区域",
+        "在 Supabase 中创建 samples 表和存储桶"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F004",
+      "category": "assistant_agent",
+      "description": "应用中的辅助智能体可以分析用户需求，提供提示词优化建议",
+      "priority": "high",
+      "steps": [
+        "集成 Claude Agent SDK",
+        "设计辅助智能体系统提示词",
+        "实现智能体与前端通信接口",
+        "实现提示词优化建议生成",
+        "展示优化建议给用户"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F005",
+      "category": "target_agent",
+      "description": "目标智能体可以根据提示词和参数生成图像",
+      "priority": "high",
+      "steps": [
+        "集成 Google Nano Banana 2 API",
+        "实现图像生成接口",
+        "处理文字+图像组合输入",
+        "实现生成结果展示",
+        "错误处理和重试机制"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F006",
+      "category": "version_management",
+      "description": "系统记录每个版本智能体的配置和生成效果",
+      "priority": "high",
+      "steps": [
+        "设计版本数据结构",
+        "在 Supabase 中创建 versions 表",
+        "实现版本自动创建（每次参数变更）",
+        "实现版本历史列表展示",
+        "实现版本对比功能"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F007",
+      "category": "generation_gallery",
+      "description": "每个版本展示该版本下的生成图像画廊",
+      "priority": "medium",
+      "steps": [
+        "创建图像画廊组件",
+        "实现分页/无限滚动",
+        "支持图像放大查看",
+        "关联图像与版本、输入参数",
+        "在 Supabase 中创建 generations 表"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F008",
+      "category": "human_feedback",
+      "description": "辅助智能体在适当时机请求用户反馈和确认",
+      "priority": "high",
+      "steps": [
+        "设计反馈请求机制",
+        "实现图像评分功能（满意/不满意）",
+        "实现文字反馈输入",
+        "智能体根据反馈调整策略",
+        "记录用户反馈历史"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F009",
+      "category": "agent_optimization",
+      "description": "辅助智能体根据用户反馈自动优化目标智能体参数",
+      "priority": "high",
+      "steps": [
+        "设计优化策略算法",
+        "实现提示词自动调整",
+        "实现参数自动调优",
+        "展示优化前后的对比",
+        "用户确认或回滚优化"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F010",
+      "category": "deployment",
+      "description": "构建完成的目标智能体可导出为配置文件",
+      "priority": "medium",
+      "steps": [
+        "设计配置文件格式（JSON/YAML）",
+        "实现配置导出功能",
+        "包含完整提示词和参数",
+        "支持配置导入（恢复智能体）",
+        "提供部署文档/指南"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F011",
+      "category": "ui_ux",
+      "description": "响应式界面设计，支持桌面和移动端",
+      "priority": "medium",
+      "steps": [
+        "设计整体 UI 布局",
+        "实现响应式导航",
+        "优化移动端交互",
+        "实现暗色/亮色主题",
+        "添加加载状态和动画"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F012",
+      "category": "authentication",
+      "description": "用户认证和多租户隔离",
+      "priority": "high",
+      "steps": [
+        "集成 Supabase Auth",
+        "实现登录/注册页面",
+        "实现用户项目隔离",
+        "添加权限控制",
+        "支持第三方登录（可选）"
+      ],
+      "passes": false
+    },
+    {
+      "id": "F013",
+      "category": "infrastructure",
+      "description": "项目基础架构搭建",
+      "priority": "high",
+      "steps": [
+        "初始化 React 项目（Vite）",
+        "配置 Supabase 连接",
+        "设置项目目录结构",
+        "配置 ESLint/Prettier",
+        "设置开发/生产环境变量"
+      ],
+      "passes": false
+    }
+  ],
+  "statistics": {
+    "total_features": 13,
+    "completed": 0,
+    "in_progress": 0,
+    "pending": 13
+  }
+}

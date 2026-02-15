@@ -1,0 +1,22 @@
+# ImageAgentBuilder 项目进度日志
+
+## 项目概述
+- **目标**: 构建 B/S 架构应用，帮助智能体构建师创建图像生成智能体
+- **技术栈**: React + Supabase + Claude Agent SDK
+- **图像模型**: Google Nano Banana 2
+
+---
+
+## 进度记录
+
+### Session 1 - 2025-02-15
+**完成事项**:
+- [x] 初始化项目仓库
+- [x] 配置 GitHub 远程仓库
+- [x] 创建长时运行 agent 配置结构
+- [x] 整理需求文档
+
+**下次继续**:
+- 系统架构设计
+- 数据库 Schema 设计
+
